@@ -3,14 +3,15 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Cli {
-    public static void request() {
-        System.out.println("Welcome to the Brain Games!\nMay I have your name?");
-        Scanner sc = new Scanner(System.in);
-        String name = sc.nextLine();
-        System.out.println("Hello, " + name + "!");
+
+    private static String name = "Default name";
+
+    public static void greet() {
+        name = request("Welcome to the Brain Games!\nMay I have your name?");
+        Cli.outText("Hello, " + name + "!");
     }
 
-    public static String request1(String requestLabel) {
+    public static String request(String requestLabel) {
         System.out.println(requestLabel);
         Scanner sc = new Scanner(System.in);
         return sc.nextLine();
@@ -18,5 +19,9 @@ public class Cli {
 
     public static void outText(String text) {
         System.out.println(text);
+    }
+
+    public static String getName() {
+        return name;
     }
 }
