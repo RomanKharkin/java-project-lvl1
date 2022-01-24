@@ -76,4 +76,37 @@ public class Games {
             Cli.outText("Congratulations, " + name + "!");
         }
     }
+
+    public static void GCD() {
+        Boolean isAllCorrect = true;
+        String name = Cli.request("Welcome to the Brain Games!\nMay I have your name?");
+        String answer = "";
+        Cli.outText("Hello, " + name + "!\n" + "What is the result of the expression?");
+        var numberOfAttempts = 3; //Количество правильных ответов для победы
+        String symbol = "";
+
+        for (int i = 0; i < numberOfAttempts; i++) {
+            var rand1 = rand(100);
+            var rand2 = rand(100);
+            var result = -1;
+            for (int j = 100; j > 0; j--) {
+                if (rand1 % j == 0 && rand2 % j == 0) {
+                    result = j;
+                    break;
+                }
+            }
+            String correctAnswer = "" + result;
+            answer = Cli.request("Question: " + rand1 + " " + rand2);
+            if (answer.equals(correctAnswer)) {
+                Cli.outText("Correct!");
+            } else {
+                isAllCorrect = false;
+                Cli.outText("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'" + ".\n" + "Let's try again, " + name + "!");
+                break;
+            }
+        }
+        if (isAllCorrect) {
+            Cli.outText("Congratulations, " + name + "!");
+        }
+    }
 }
