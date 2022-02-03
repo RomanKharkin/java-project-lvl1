@@ -2,10 +2,12 @@
 [![Actions Status](https://github.com/RomanKharkin/java-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/RomanKharkin/java-project-lvl1/actions)
 
 
-https://asciinema.org/a/2DyeELhB8CpNWyePE7EsNiD9n
+Even: https://asciinema.org/a/lZ16PVwQxkbDdSOsoMaBVhhvS
 
-https://asciinema.org/a/IKEiK2vQ9ZkH8Hnb6LgK71ZbE
+Calc: https://asciinema.org/a/E5FvPYLm0LR4bidgcE3s9HVxM
 
-https://asciinema.org/a/hJBMFVN3ilOUH8ztGiSp76vZ8
+GCD: https://asciinema.org/a/xnzGcWsCVlsp2vSXydWoLagpO
 
-https://asciinema.org/a/dwuF8D4Y4AXDF5LRqFyfCAwin
+Progression: https://asciinema.org/a/iOypX1JdExw8gPrX99qxbT6jO
+
+Prime: https://asciinema.org/a/8tI2bF9vgZc8J2gdHDWYiXVzo
