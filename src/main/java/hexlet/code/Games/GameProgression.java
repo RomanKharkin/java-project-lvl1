@@ -33,7 +33,7 @@ public class GameProgression {
                 }
             }
             String correctAnswer = "" + result;
-            answer = Cli.request("Question: " + progression + "\nYour answer: ");
+            answer = Cli.request("Question:" + progression + "\nYour answer: ");
             if (answer.equals(correctAnswer)) {
                 Cli.outText("Correct!");
             } else {
