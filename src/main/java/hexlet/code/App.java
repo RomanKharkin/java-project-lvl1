@@ -7,6 +7,7 @@ import hexlet.code.Games.GameGcd;
 import hexlet.code.Games.GameProgression;
 import hexlet.code.Games.GamePrime;
 
+
 public class App {
 
     public static void main(String[] args) {

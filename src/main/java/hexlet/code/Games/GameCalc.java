@@ -1,6 +1,10 @@
 package hexlet.code.Games;
 import hexlet.code.Cli;
+import hexlet.code.Engine;
 
+import static hexlet.code.Engine.QUESTIONS;
+import static hexlet.code.Engine.ANSWERS;
+import static hexlet.code.Engine.QUESTIONS_ANSWERS;
 import static hexlet.code.Games.Rand.NUMBER_CORRECT_ANSWER;
 import static hexlet.code.Games.Rand.BOTTOM_LIMIT;
 import static hexlet.code.Games.Rand.TOP_LIMIT;
@@ -12,10 +16,8 @@ public class GameCalc {
     public static final int SUBTRACTION = 2;
     public static final int MULTIPLICATION = 3;
     public static void calc() {
-        Boolean isAllCorrect = true;
-        Cli.greet();
-        String answer = "";
-        Cli.outText("What is the result of the expression?");
+        String[] game = new String[QUESTIONS_ANSWERS];
+        game[0] = "What is the result of the expression?";
         String symbol = "";
 
         for (int i = 0; i < NUMBER_CORRECT_ANSWER; i++) {
@@ -38,19 +40,9 @@ public class GameCalc {
                     break;
                 default: Cli.outText("Error");
             }
-            String correctAnswer = "" + result;
-            answer = Cli.request("Question: " + rand1 + symbol + rand2 + "\nYour answer: ");
-            if (answer.equals(correctAnswer)) {
-                Cli.outText("Correct!");
-            } else {
-                isAllCorrect = false;
-                Cli.outText("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + "'"
-                        + correctAnswer + "'" + ".\n" + "Let's try again, " + Cli.getName() + "!");
-                break;
-            }
+            game[i + ANSWERS] = "" + result;
+            game[i + QUESTIONS] = "" + rand1 + symbol + rand2;
         }
-        if (isAllCorrect) {
-            Cli.outText("Congratulations, " + Cli.getName() + "!");
-        }
+        Engine.play(game);
     }
 }
