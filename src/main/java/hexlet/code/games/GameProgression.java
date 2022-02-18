@@ -14,7 +14,8 @@ public class GameProgression {
     public static final int PROGRESSION_STEP = 10;
     public static final int PROGRESSION_START = 15;
     public static final int PROGRESSION_MEMBERS = 5;
-    public static void progression() {
+
+    public static void play() {
         String[][] game = new String[QUESTIONS_ANSWERS][QUESTIONS_ANSWERS];
         String condition = "What number is missing in the progression?";
 
@@ -37,6 +38,6 @@ public class GameProgression {
             game[QUESTIONS][i] = progression.trim();
             game[ANSWERS][i] = "" + result;
         }
-        Engine.play(condition, game);
+        Engine.initGame(condition, game);
     }
 }

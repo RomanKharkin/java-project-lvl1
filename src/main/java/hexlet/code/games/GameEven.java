@@ -10,9 +10,9 @@ import static hexlet.code.games.Rand.rand;
 import static hexlet.code.games.Rand.BOTTOM_LIMIT;
 import static hexlet.code.games.Rand.TOP_LIMIT;
 
-
 public class GameEven {
-    public static void even() {
+
+    public static void play() {
         String[][] game = new String[QUESTIONS_ANSWERS][QUESTIONS_ANSWERS];
         String condition = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
@@ -21,6 +21,6 @@ public class GameEven {
             game[QUESTIONS][i] = "" + num;
             game[ANSWERS][i] = num % 2 == 0 ? "yes" : "no";
         }
-        Engine.play(condition, game);
+        Engine.initGame(condition, game);
     }
 }

@@ -4,11 +4,11 @@ import static hexlet.code.games.Rand.NUMBER_CORRECT_ANSWER;
 
 public class Engine {
     public static final int QUESTIONS_ANSWERS = 3;
-    public static final int QUESTIONS = 0;                  // i + 1
-    public static final int ANSWERS = 1;                    // i + 4
+    public static final int QUESTIONS = 0;
+    public static final int ANSWERS = 1;
 
 
-    public static void play(String condition, String[][] game) {
+    public static void initGame(String condition, String[][] game) {
         Boolean isAllCorrect = true;
         Cli.greet();
         Cli.outText(condition);

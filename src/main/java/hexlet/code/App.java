@@ -28,19 +28,19 @@ public class App {
                     Cli.greet();
                     return;
                 case "2":
-                    GameEven.even();
+                    GameEven.play();
                     return;
                 case "3":
-                    GameCalc.calc();
+                    GameCalc.play();
                     return;
                 case "4":
-                    GameGcd.gcd();
+                    GameGcd.play();
                     return;
                 case "5":
-                    GameProgression.progression();
+                    GameProgression.play();
                     return;
                 case "6":
-                    GamePrime.prime();
+                    GamePrime.play();
                     return;
                 case "0":
                     Cli.outText("Exit");

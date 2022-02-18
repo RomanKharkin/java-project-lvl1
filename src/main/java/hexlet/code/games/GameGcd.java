@@ -10,9 +10,9 @@ import static hexlet.code.games.Rand.NUMBER_CORRECT_ANSWER;
 import static hexlet.code.games.Rand.TOP_LIMIT;
 import static hexlet.code.games.Rand.rand;
 
-
 public class GameGcd {
-    public static void gcd() {
+
+    public static void play() {
         String[][] game = new String[QUESTIONS_ANSWERS][QUESTIONS_ANSWERS];
         String condition = "Find the greatest common divisor of given numbers.";
 
@@ -23,7 +23,7 @@ public class GameGcd {
             game[QUESTIONS][i] = number1 + " " + number2;
             game[ANSWERS][i] = "" + operation(number1, number2);
         }
-        Engine.play(condition, game);
+        Engine.initGame(condition, game);
     }
 
     public static int operation(int number1, int number2) {

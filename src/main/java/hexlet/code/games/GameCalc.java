@@ -18,7 +18,7 @@ public class GameCalc {
     public static final int SUBTRACTION = 1;
     public static final int MULTIPLICATION = 2;
 
-    public static void calc() {
+    public static void play() {
         String[][] game = new String[QUESTIONS_ANSWERS][QUESTIONS_ANSWERS];
         String condition = "What is the result of the expression?";
 
@@ -34,7 +34,7 @@ public class GameCalc {
             game[QUESTIONS][i] = "" + number1 + symbol[operationIndex] + number2;
             game[ANSWERS][i] = "" + result;
         }
-        Engine.play(condition, game);
+        Engine.initGame(condition, game);
     }
 
     public static int operation(int[] numbers, int numberOperation) {
