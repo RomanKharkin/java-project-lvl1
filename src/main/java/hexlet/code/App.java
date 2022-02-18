@@ -1,11 +1,11 @@
 package hexlet.code;
 
 
-import hexlet.code.Games.GameCalc;
-import hexlet.code.Games.GameEven;
-import hexlet.code.Games.GameGcd;
-import hexlet.code.Games.GameProgression;
-import hexlet.code.Games.GamePrime;
+import hexlet.code.games.GameCalc;
+import hexlet.code.games.GameEven;
+import hexlet.code.games.GameGcd;
+import hexlet.code.games.GameProgression;
+import hexlet.code.games.GamePrime;
 
 
 public class App {

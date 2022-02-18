@@ -1,13 +1,13 @@
-package hexlet.code.Games;
+package hexlet.code.games;
 
 import hexlet.code.Engine;
 
 import static hexlet.code.Engine.ANSWERS;
 import static hexlet.code.Engine.QUESTIONS;
 import static hexlet.code.Engine.QUESTIONS_ANSWERS;
-import static hexlet.code.Games.Rand.NUMBER_CORRECT_ANSWER;
-import static hexlet.code.Games.Rand.BOTTOM_LIMIT;
-import static hexlet.code.Games.Rand.rand;
+import static hexlet.code.games.Rand.NUMBER_CORRECT_ANSWER;
+import static hexlet.code.games.Rand.BOTTOM_LIMIT;
+import static hexlet.code.games.Rand.rand;
 
 
 public class GameProgression {
@@ -15,8 +15,8 @@ public class GameProgression {
     public static final int PROGRESSION_START = 15;
     public static final int PROGRESSION_MEMBERS = 5;
     public static void progression() {
-        String[] game = new String[QUESTIONS_ANSWERS];
-        game[0] = "What number is missing in the progression?";
+        String[][] game = new String[QUESTIONS_ANSWERS][QUESTIONS_ANSWERS];
+        String condition = "What number is missing in the progression?";
 
         for (int i = 0; i < NUMBER_CORRECT_ANSWER; i++) {
             var number = rand(PROGRESSION_MEMBERS, PROGRESSION_MEMBERS);
@@ -34,9 +34,9 @@ public class GameProgression {
                     progression += " " + start;
                 }
             }
-            game[i + QUESTIONS] = progression.trim();
-            game[i + ANSWERS] = "" + result;
+            game[QUESTIONS][i] = progression.trim();
+            game[ANSWERS][i] = "" + result;
         }
-        Engine.play(game);
+        Engine.play(condition, game);
     }
 }

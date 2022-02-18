@@ -1,4 +1,4 @@
-package hexlet.code.Games;
+package hexlet.code.games;
 
 public class Rand {
     public static int rand(int limitBottom, int limitTop) {

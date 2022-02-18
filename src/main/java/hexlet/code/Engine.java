@@ -1,28 +1,28 @@
 package hexlet.code;
 
-import static hexlet.code.Games.Rand.NUMBER_CORRECT_ANSWER;
+import static hexlet.code.games.Rand.NUMBER_CORRECT_ANSWER;
 
 public class Engine {
-    public static final int QUESTIONS_ANSWERS = 7;
-    public static final int QUESTIONS = 1;                  // i + 1
-    public static final int ANSWERS = 4;                    // i + 4
+    public static final int QUESTIONS_ANSWERS = 3;
+    public static final int QUESTIONS = 0;                  // i + 1
+    public static final int ANSWERS = 1;                    // i + 4
 
 
-    public static void play(String[] game) {
+    public static void play(String condition, String[][] game) {
         Boolean isAllCorrect = true;
         Cli.greet();
-        Cli.outText(game[0]);
+        Cli.outText(condition);
         String answer = "";
 
         for (int i = 0; i < NUMBER_CORRECT_ANSWER; i++) {
 
-            answer = Cli.request("Question: " + game[i + QUESTIONS] + "\nYour answer: ").toLowerCase();
-            if (answer.equals(game[i + ANSWERS])) {
+            answer = Cli.request("Question: " + game[QUESTIONS][i] + "\nYour answer: ").toLowerCase();
+            if (answer.equals(game[ANSWERS][i])) {
                 Cli.outText("Correct!");
             } else {
                 isAllCorrect = false;
                 Cli.outText("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + "'"
-                        + game[i + ANSWERS] + "'" + ".\n" + "Let's try again, " + Cli.getName() + "!");
+                        + game[ANSWERS][i] + "'" + ".\n" + "Let's try again, " + Cli.getName() + "!");
                 break;
             }
         }
