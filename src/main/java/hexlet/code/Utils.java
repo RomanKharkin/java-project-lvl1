@@ -1,6 +1,6 @@
-package hexlet.code.games;
+package hexlet.code;
 
-public class Rand {
+public class Utils {
     public static int rand(int limitBottom, int limitTop) {
         return (int) (limitBottom + Math.random() * limitTop);
     }

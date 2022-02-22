@@ -1,9 +1,10 @@
 package hexlet.code;
 
-import static hexlet.code.games.Rand.NUMBER_CORRECT_ANSWER;
+import static hexlet.code.Utils.NUMBER_CORRECT_ANSWER;
 
 public class Engine {
-    public static final int QUESTIONS_ANSWERS = 3;
+    public static final int COUPLE_QUESTIONS_ANSWERS = 2;
+    public static final int LINES_QUESTIONS_ANSWERS = 3;
     public static final int QUESTIONS = 0;
     public static final int ANSWERS = 1;
 
@@ -16,13 +17,13 @@ public class Engine {
 
         for (int i = 0; i < NUMBER_CORRECT_ANSWER; i++) {
 
-            answer = Cli.request("Question: " + game[QUESTIONS][i] + "\nYour answer: ").toLowerCase();
-            if (answer.equals(game[ANSWERS][i])) {
+            answer = Cli.request("Question: " + game[i][QUESTIONS] + "\nYour answer: ").toLowerCase();
+            if (answer.equals(game[i][ANSWERS])) {
                 Cli.outText("Correct!");
             } else {
                 isAllCorrect = false;
                 Cli.outText("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + "'"
-                        + game[ANSWERS][i] + "'" + ".\n" + "Let's try again, " + Cli.getName() + "!");
+                        + game[i][ANSWERS] + "'" + ".\n" + "Let's try again, " + Cli.getName() + "!");
                 break;
             }
         }
