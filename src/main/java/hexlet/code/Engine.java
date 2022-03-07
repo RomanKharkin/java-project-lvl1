@@ -1,34 +1,34 @@
 package hexlet.code;
 
-import static hexlet.code.Utils.NUMBER_CORRECT_ANSWER;
-
 public class Engine {
+    public static final int NUMBER_CORRECT_ANSWER = 3; //Количество правильных ответов для победы
     public static final int COUPLE_QUESTIONS_ANSWERS = 2;
     public static final int LINES_QUESTIONS_ANSWERS = 3;
     public static final int QUESTIONS = 0;
     public static final int ANSWERS = 1;
 
 
-    public static void initGame(String condition, String[][] game) {
+
+    public static void runGame(String condition, String[][] questionsAndAnswers) {
         Boolean isAllCorrect = true;
         Cli.greet();
         Cli.outText(condition);
         String answer = "";
 
-        for (int i = 0; i < NUMBER_CORRECT_ANSWER; i++) {
+        //for (int i = 0; i < NUMBER_CORRECT_ANSWER; i++) {
+        for (String[] questionAndAnswer: questionsAndAnswers) {
 
-            answer = Cli.request("Question: " + game[i][QUESTIONS] + "\nYour answer: ").toLowerCase();
-            if (answer.equals(game[i][ANSWERS])) {
+            answer = Cli.request("Question: " + questionAndAnswer[QUESTIONS] + "\nYour answer: ").toLowerCase();
+
+            if (answer.equals(questionAndAnswer[ANSWERS])) {
                 Cli.outText("Correct!");
             } else {
                 isAllCorrect = false;
                 Cli.outText("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + "'"
-                        + game[i][ANSWERS] + "'" + ".\n" + "Let's try again, " + Cli.getName() + "!");
-                break;
+                        + questionAndAnswer[ANSWERS] + "'" + ".\n" + "Let's try again, " + Cli.getName() + "!");
+                return;
             }
         }
-        if (isAllCorrect) {
-            Cli.outText("Congratulations, " + Cli.getName() + "!");
-        }
+        Cli.outText("Congratulations, " + Cli.getName() + "!");
     }
 }
