@@ -27,7 +27,7 @@ public class GameProgression {
             var hiddenElementIndex = rand(BOTTOM_LIMIT, progressionLength);
             var hiddenElementValue = -1;
             String progression = "";
-            for (int j = 0; j < progressionLength; j++) {
+            for (int j = 1; j < progressionLength + 1; j++) {
                 current += step;
                 if (j == hiddenElementIndex) {
                     hiddenElementValue = current;
