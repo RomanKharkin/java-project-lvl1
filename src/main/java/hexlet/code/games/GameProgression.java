@@ -2,11 +2,11 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import static hexlet.code.Engine.ANSWERS;
+import static hexlet.code.Engine.ANSWER;
 import static hexlet.code.Engine.COUPLE_QUESTIONS_ANSWERS;
 import static hexlet.code.Engine.LINES_QUESTIONS_ANSWERS;
 import static hexlet.code.Engine.NUMBER_CORRECT_ANSWER;
-import static hexlet.code.Engine.QUESTIONS;
+import static hexlet.code.Engine.QUESTION;
 import static hexlet.code.Utils.BOTTOM_LIMIT;
 import static hexlet.code.Utils.rand;
 
@@ -36,8 +36,8 @@ public class GameProgression {
                     progression += " " + current;
                 }
             }
-            questionsAndAnswers[i][QUESTIONS] = progression.trim();
-            questionsAndAnswers[i][ANSWERS] = String.valueOf(hiddenElementValue);
+            questionsAndAnswers[i][QUESTION] = progression.trim();
+            questionsAndAnswers[i][ANSWER] = String.valueOf(hiddenElementValue);
         }
         Engine.runGame(CONDITION, questionsAndAnswers);
     }

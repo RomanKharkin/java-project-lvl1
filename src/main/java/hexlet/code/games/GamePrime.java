@@ -2,11 +2,11 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import static hexlet.code.Engine.ANSWERS;
+import static hexlet.code.Engine.ANSWER;
 import static hexlet.code.Engine.COUPLE_QUESTIONS_ANSWERS;
 import static hexlet.code.Engine.LINES_QUESTIONS_ANSWERS;
 import static hexlet.code.Engine.NUMBER_CORRECT_ANSWER;
-import static hexlet.code.Engine.QUESTIONS;
+import static hexlet.code.Engine.QUESTION;
 import static hexlet.code.Utils.rand;
 
 public class GamePrime {
@@ -19,8 +19,8 @@ public class GamePrime {
 
         for (int i = 0; i < NUMBER_CORRECT_ANSWER; i++) {
             var number = rand(BOTTOM_LIMIT_PRIME, TOP_LIMIT_PRIME);
-            questionsAndAnswers[i][QUESTIONS] = String.valueOf(number);
-            questionsAndAnswers[i][ANSWERS] = isPrime(number) ? "yes" : "no";
+            questionsAndAnswers[i][QUESTION] = String.valueOf(number);
+            questionsAndAnswers[i][ANSWER] = isPrime(number) ? "yes" : "no";
         }
         Engine.runGame(CONDITION, questionsAndAnswers);
     }

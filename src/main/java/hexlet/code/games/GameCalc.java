@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 
 import static hexlet.code.Utils.BOTTOM_LIMIT;
@@ -25,8 +24,8 @@ public class GameCalc {
             var operationIndex = rand(BOTTOM_LIMIT_OPERATION, TOP_LIMIT_OPERATION);
 
             var result = calculate(number1, number2, operationIndex);
-            questionsAndAnswers[i][Engine.QUESTIONS] = number1 + SYMBOLS[operationIndex] + number2;
-            questionsAndAnswers[i][Engine.ANSWERS] = String.valueOf(result);
+            questionsAndAnswers[i][Engine.QUESTION] = number1 + SYMBOLS[operationIndex] + number2;
+            questionsAndAnswers[i][Engine.ANSWER] = String.valueOf(result);
         }
         Engine.runGame(CONDITION, questionsAndAnswers);
     }
@@ -43,7 +42,7 @@ public class GameCalc {
             case MULTIPLICATION:
                 result = number1 * number2;
                 break;
-            default: Cli.outText("Error");
+            default: System.out.println("Error");
         }
         return result;
     }

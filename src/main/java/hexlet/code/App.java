@@ -7,22 +7,26 @@ import hexlet.code.games.GameGcd;
 import hexlet.code.games.GameProgression;
 import hexlet.code.games.GamePrime;
 
+import java.util.Scanner;
+
 
 public class App {
 
     public static void main(String[] args) {
         String n = "";
         while (!"0".equals(n)) {
-            Cli.outText("Please enter the game number and press Enter.");
-            Cli.outText("1 - Greet");
-            Cli.outText("2 - Even");
-            Cli.outText("3 - Calc");
-            Cli.outText("4 - GCD");
-            Cli.outText("5 - Progression");
-            Cli.outText("6 - Prime");
-            Cli.outText("0 - Exit");
+            System.out.println("Please enter the game number and press Enter.");
+            System.out.println("1 - Greet");
+            System.out.println("2 - Even");
+            System.out.println("3 - Calc");
+            System.out.println("4 - GCD");
+            System.out.println("5 - Progression");
+            System.out.println("6 - Prime");
+            System.out.println("0 - Exit");
 
-            n = Cli.request("Your choice: ");
+            System.out.print("Your choice: ");
+            Scanner sc = new Scanner(System.in);
+            n = sc.nextLine();
             switch (n) {
                 case "1":
                     Cli.greet();
@@ -43,9 +47,9 @@ public class App {
                     GamePrime.play();
                     return;
                 case "0":
-                    Cli.outText("Exit");
+                    System.out.println("Exit");
                     return;
-                default: Cli.outText("Error");
+                default: System.out.println("Error");
             }
         }
     }
