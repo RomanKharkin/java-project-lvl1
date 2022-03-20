@@ -17,9 +17,9 @@ public class Engine {
 
         for (String[] questionAndAnswer: questionsAndAnswers) {
             String answer = "";
-            System.out.print(("Question: " + questionAndAnswer[QUESTION] + "\nYour answer: ").toLowerCase());
+            System.out.print("Question: " + questionAndAnswer[QUESTION] + "\nYour answer: ");
             Scanner sc = new Scanner(System.in);
-            answer = sc.nextLine();
+            answer = sc.nextLine().toLowerCase();
 
             if (answer.equals(questionAndAnswer[ANSWER])) {
                 System.out.println("Correct!");
