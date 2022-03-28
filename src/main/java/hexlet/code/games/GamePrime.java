@@ -4,8 +4,7 @@ import hexlet.code.Engine;
 
 import static hexlet.code.Engine.ANSWER;
 import static hexlet.code.Engine.COUPLE_QUESTIONS_ANSWERS;
-import static hexlet.code.Engine.LINES_QUESTIONS_ANSWERS;
-import static hexlet.code.Engine.NUMBER_CORRECT_ANSWER;
+import static hexlet.code.Engine.NUMBER_CORRECT_ANSWERS;
 import static hexlet.code.Engine.QUESTION;
 import static hexlet.code.Utils.rand;
 
@@ -15,9 +14,9 @@ public class GamePrime {
     public static final String CONDITION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void play() {
-        String[][] questionsAndAnswers = new String[LINES_QUESTIONS_ANSWERS][COUPLE_QUESTIONS_ANSWERS];
+        String[][] questionsAndAnswers = new String[NUMBER_CORRECT_ANSWERS][COUPLE_QUESTIONS_ANSWERS];
 
-        for (int i = 0; i < NUMBER_CORRECT_ANSWER; i++) {
+        for (int i = 0; i < NUMBER_CORRECT_ANSWERS; i++) {
             var number = rand(BOTTOM_LIMIT_PRIME, TOP_LIMIT_PRIME);
             questionsAndAnswers[i][QUESTION] = String.valueOf(number);
             questionsAndAnswers[i][ANSWER] = isPrime(number) ? "yes" : "no";

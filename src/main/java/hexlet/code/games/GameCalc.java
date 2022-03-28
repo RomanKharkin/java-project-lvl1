@@ -2,7 +2,6 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import static hexlet.code.Utils.BOTTOM_LIMIT;
 import static hexlet.code.Utils.TOP_LIMIT;
 import static hexlet.code.Utils.rand;
 
@@ -16,11 +15,11 @@ public class GameCalc {
     public static final String CONDITION = "What is the result of the expression?";
 
     public static void play() {
-        String[][] questionsAndAnswers = new String[Engine.LINES_QUESTIONS_ANSWERS][Engine.COUPLE_QUESTIONS_ANSWERS];
+        String[][] questionsAndAnswers = new String[Engine.NUMBER_CORRECT_ANSWERS][Engine.COUPLE_QUESTIONS_ANSWERS];
 
-        for (int i = 0; i < Engine.NUMBER_CORRECT_ANSWER; i++) {
-            int number1 = rand(BOTTOM_LIMIT, TOP_LIMIT);
-            int number2 = rand(BOTTOM_LIMIT, TOP_LIMIT);
+        for (int i = 0; i < Engine.NUMBER_CORRECT_ANSWERS; i++) {
+            int number1 = rand(TOP_LIMIT);
+            int number2 = rand(TOP_LIMIT);
             var operationIndex = rand(BOTTOM_LIMIT_OPERATION, TOP_LIMIT_OPERATION);
 
             var result = calculate(number1, number2, operationIndex);

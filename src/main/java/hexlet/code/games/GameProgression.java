@@ -4,8 +4,7 @@ import hexlet.code.Engine;
 
 import static hexlet.code.Engine.ANSWER;
 import static hexlet.code.Engine.COUPLE_QUESTIONS_ANSWERS;
-import static hexlet.code.Engine.LINES_QUESTIONS_ANSWERS;
-import static hexlet.code.Engine.NUMBER_CORRECT_ANSWER;
+import static hexlet.code.Engine.NUMBER_CORRECT_ANSWERS;
 import static hexlet.code.Engine.QUESTION;
 import static hexlet.code.Utils.BOTTOM_LIMIT;
 import static hexlet.code.Utils.rand;
@@ -18,12 +17,12 @@ public class GameProgression {
     public static final String CONDITION = "What number is missing in the progression?";
 
     public static void play() {
-        String[][] questionsAndAnswers = new String[LINES_QUESTIONS_ANSWERS][COUPLE_QUESTIONS_ANSWERS];
+        String[][] questionsAndAnswers = new String[NUMBER_CORRECT_ANSWERS][COUPLE_QUESTIONS_ANSWERS];
 
-        for (int i = 0; i < NUMBER_CORRECT_ANSWER; i++) {
+        for (int i = 0; i < NUMBER_CORRECT_ANSWERS; i++) {
             var progressionLength = rand(PROGRESSION_MEMBERS, PROGRESSION_MEMBERS);
             var step = rand(BOTTOM_LIMIT, PROGRESSION_STEP);
-            var current = rand(BOTTOM_LIMIT, PROGRESSION_START);
+            var current = rand(PROGRESSION_START);
             var hiddenElementIndex = rand(BOTTOM_LIMIT, progressionLength);
             var hiddenElementValue = -1;
             String progression = "";
